@@ -1,0 +1,43 @@
+{
+  "name": "ai-compiler-ide",
+  "version": "1.0.0",
+  "description": "AI-integrated web IDE with online compilation and extensible architecture",
+  "main": "index.js",
+  "scripts": {
+    "setup": "./scripts/setup.sh",
+    "dev": "docker-compose up",
+    "dev:detached": "docker-compose up -d",
+    "build": "docker-compose build",
+    "stop": "docker-compose down",
+    "clean": "docker-compose down -v --rmi all",
+    "logs": "docker-compose logs -f",
+    "migrate": "docker-compose exec backend npm run migrate",
+    "seed": "docker-compose exec backend npm run seed",
+    "test": "docker-compose exec backend npm test && docker-compose exec frontend npm test",
+    "prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"
+  },
+  "keywords": [
+    "ide",
+    "compiler",
+    "ai",
+    "web",
+    "monaco",
+    "judge0",
+    "openai",
+    "gemini",
+    "extensions"
+  ],
+  "author": "AI IDE Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ai-ide/ai-compiler-ide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ai-ide/ai-compiler-ide/issues"
+  },
+  "homepage": "https://github.com/ai-ide/ai-compiler-ide#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
